@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import Counter from "./Counter";
+// import counterSlice from "./counterSlice";
+import { useSelector } from "react-redux/es/exports";
+
+import Counter from "./Counter";
+import Name from "./Name";
+
 
 function App() {
+  const name = useSelector(store => store.name.name);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Counter />
+      <hr />
+      <Name />
+      <h2>Hello {name}</h2>
+    </>
   );
 }
 
